@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>CSS_Nesting</title>
+    </head>
+    <style>
+        /* 巢狀寫法 */
+        .contain-wrap {
+            position: relative;
+            width: 500px;
+            height: 500px;
+            border: 1px solid red;
+            h1 {
+                font-size: 2rem;
+                color: blue;
+            }
+           
+            &::after {
+                content: "";
+                position: absolute;
+                width: 400px;
+                height: 400px;
+                border: 2px solid rgb(65, 53, 53);
+
+                 /* 為元素裡面的巢狀結構不會生效 */
+                /* @media (max-width: 300px) {
+                    border: 20px;
+                } */
+
+            }
+        }
+
+        /* 偽元素正確寫法 */
+        @media (max-width: 300px) {
+            .contain-wrap::after {
+                border: 20px solid rgb(65, 53, 53);
+            }
+        }
+
+        /* NOTE: 傳統寫法 */
+        /* .contain-wrap {
+            width: 500px;
+            height: 500px;
+            border: 1px solid red;
+        }
+        .contain-wrap h1 {
+            font-size: 2rem;
+            color: blue;
+        } */
+         
+         
+    </style>
+    <!-- Q:只對 contain-wrap 內文字變換顏色 -->
+    <body>
+        <div class="contain-wrap">
+            <h1>CSS巢狀結構(我是裡面文字)</h1>
+        </div>
+        <h1>CSS巢狀結構(我是外面文字)</h1>
+    </body>
+</html>
+
+<!-- 
+NOTE:
+寫法較為輕便、可讀性更高
+ios 16.4 以下不支援 
+The nesting selector cannot represent pseudo-elements 偽元素不支援巢狀結構 
+-->

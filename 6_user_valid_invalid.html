@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>6_user_valid_invalid</title>
+        <style>
+            input {
+                border: 2px solid black;
+            }
+            /* 無效時邊框為紅色 */
+            input:invalid {
+                border: 2px solid red; /* 無效時邊框為紅色 */
+            }
+
+            /* 有效時邊框為綠色 */
+            input:valid {
+                border: 2px solid green; /* 有效時邊框為綠色 */
+            }
+
+            /* 在無效時的提示樣式 */
+            input:invalid:focus {
+                outline: none; /* 移除焦點樣式 */
+                box-shadow: 0 0 5px red; /* 增加紅色陰影 */
+            }
+
+            /* 在有效時的提示樣式 */
+            input:valid:focus {
+                outline: none; /* 移除焦點樣式 */
+                box-shadow: 0 0 5px green; /* 增加綠色陰影 */
+            }
+        </style>
+    </head>
+    <body>
+        <form>
+            <label for="email">電子郵件：</label>
+            <input type="email" id="email" required />
+            <br /><br />
+
+            <label for="password">密碼：</label>
+            <input type="password" id="password" required pattern=".{6,}" />
+            <small>至少6個字元</small>
+            <br /><br />
+
+            <button type="submit">提交</button>
+        </form>
+    </body>
+</html>
+
+<!-- Q: 沒輸入內容時，是否可以佈觸發樣式 -->

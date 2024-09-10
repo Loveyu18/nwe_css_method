@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            input[type="radio"],
+            input[type="checkbox"] {
+                accent-color: #ff6600; /* 設定重點顏色為橘色 */
+            }
+
+            input[type="range"] {
+                accent-color: #8dcc8f; /* 設定範圍滑桿的重點顏色為綠色 */
+            }
+        </style>
+    </head>
+    <body>
+        <form>
+            <label> <input type="radio" name="choice" checked /> 選項 1 </label>
+            <label> <input type="radio" name="choice" /> 選項 2 </label>
+            <label> <input type="checkbox" checked /> 同意條款 </label>
+            <input type="range" min="0" max="100" />
+        </form>
+    </body>
+</html>
+
+<!-- 
+CSS 的 accent-color 屬性可以用來自訂表單元素（如單選按鈕、複選框、範圍滑桿等）的重點顏色（accent color）。這個屬性主要用來改變原本表單控件的外觀，而不用再手動去改變每個元素的樣式，讓使用者可以更容易地改變網站的色調。 
+-->
+
+<!-- 
+使用情境
+一致性設計：如果你的網站有特定的品牌色或主題色，可以透過 accent-color 統一所有表單元素的顏色，讓網站設計更具一致性。
+可訪問性：針對不同主題模式（例如深色模式），你可以動態調整 accent-color，以確保表單元素在不同背景下仍然清晰可見。
+輕鬆調整樣式：不需要再使用圖片或複雜的 CSS 規則來覆蓋表單元素的預設樣式，使用 accent-color 可以更簡單地改變控件的外觀。 
+-->
+
+<!-- 
+主題介紹：accent-color 是 CSS 中一個相對較新的屬性，允許開發者更簡單地改變表單元素（如按鈕、滑桿等）控制項的外觀主題顏色。
+內容重點：
+介紹 accent-color 的基本用法，如 accent-color: red;，如何影響 checkbox、radio button、進度條等元素。
+跨瀏覽器支援情況，並探討如何優雅降級處理。
+練習：設計一個包含多種表單元素的頁面，應用不同的 accent-color 值來改變這些元素的顯示效果。
+進階：如何搭配其他 CSS 屬性（如 :checked）來進一步自訂表單元素的樣式。
+-->

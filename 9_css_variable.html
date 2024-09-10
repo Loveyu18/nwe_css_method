@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>css variable</title>
+        <style>
+            /* 1. 定義 */
+            :root {
+                --main-color: #3498db; /* 定義一個主要顏色變數 */
+                --padding: 16px; /* 定義一個內邊距變數 */
+                --title-color: #ffffff;
+            }
+
+            /* 2. 使用: 在樣式中使用 var() 函數來引用定義的變數。 */
+
+            body {
+                background-color: var(--main-color);
+                padding: var(--padding);
+            }
+            h1 {
+                color: var(--title-color);
+            }
+            h2{
+                color: var(--title-color);
+            }
+        </style>
+    </head>
+    <body>
+        <h1>H!H!H!H!H!</h1>
+        <h2>h2h2h2h2</h2>
+    </body>
+</html>
+
+<!-- 
+CSS 變數（也稱為自訂屬性）是一種在 CSS 中定義可重複使用的變數的方式，使得樣式更具靈活性和可維護性。CSS 變數以 -- 開頭，然後在樣式中使用 var() 函數來引用它們。 
+-->
+
+<!-- 
+變數的優勢
+可維護性：如果需要更改某個顏色或間距，只需在變數定義的地方進行修改，所有使用該變數的地方都會自動更新。
+主題切換：可以輕鬆地根據不同的主題切換變數值，從而改變整個網站的樣式。
+計算：CSS 變數可以與 calc() 函數結合使用，進行動態計算。 
+-->
+
+<!-- 
+主題介紹：CSS 變數（也稱為 CSS 自訂屬性）可以讓開發者在 CSS 中定義可重用的值，並根據需要動態修改。
+內容重點：
+介紹 CSS 變數的基本語法，如 --main-color: blue; 以及如何在樣式中使用 var(--main-color)。
+動態修改變數：如何透過 JavaScript 修改變數值，達到主題切換等效果。
+變數的作用域：局部變數與全局變數的使用差異。
+練習：設計一個主題切換功能，讓使用者可以透過按鈕動態改變頁面的顏色主題。
+進階：使用 CSS 變數管理深色模式與淺色模式。
+ -->

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>5. :is()</title>
+
+        <style>
+            /* h1,
+            h2,
+            h3 {
+                color: red;
+            } */
+            :is(h1, h2, h3) {
+                color: rgb(39, 67, 143);
+            }
+
+            /* ul li:first-child,
+            ol li:first-child,
+            nav li:first-child {
+                color: red;
+            } */
+            :is(ul, ol, nav) li:first-child {
+                color: rgb(170, 226, 66);
+            }
+            button:hover,
+            button:focus {
+                background-color: rgb(44, 211, 58);
+            }
+            
+            button:is(:hover, :focus) {
+                background-color: aqua;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>h1 title</h1>
+        <h2>h2 title</h2>
+        <h3>h3 title</h3>
+
+        <ul>
+            <li>item1</li>
+            <li>item2</li>
+        </ul>
+
+        <ol>
+            <li>ol 1</li>
+            <li>ol 2</li>
+            <li>ol 3</li>
+        </ol>
+
+        <nav>
+            <li>nav 1</li>
+            <li>nav 2</li>
+        </nav>
+
+        <button type="button">button</button>
+    </body>
+</html>
+<!-- 
+1. 多樣式組合
+2. 複雜選擇器中增強可讀性
+3. 簡化偽類組合
+-->

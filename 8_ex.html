@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            input[type="radio"],
+            input[type="checkbox"],
+            input[type="range"] {
+                accent-color: #ff6600; /* 預設顏色 */
+                transform: scale(2.8); /* 調整大小 */
+                margin: 100px; /* 添加間距 */
+            }
+            input[type="range"] {
+                -webkit-appearance: none;
+                width: 100px; /* 設定寬度 */
+                height: 5px; /* 設定高度 */
+                background: #ddd; /* 背景顏色 */
+                border-radius: 5px;
+                accent-color: #073b09; /* 設定重點顏色 */
+                margin: 20px; /* 添加間距 */
+            }
+
+            input[type="range"]::-webkit-slider-thumb {
+                -webkit-appearance: none;
+                width: 15px; /* 設定滑桿的寬度 */
+                height: 15px; /* 設定滑桿的高度 */
+                background-color: #4caf50; /* 滑桿顏色 */
+                border-radius: 50%; /* 滑桿圓形 */
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    <body>
+        <button id="toggleTheme">切換主題</button>
+        <form>
+            <label> <input type="radio" name="choice" checked /> 選項 1 </label>
+            <label> <input type="radio" name="choice" /> 選項 2 </label>
+            <label> <input type="checkbox" checked /> 同意條款 </label>
+            <input type="range" min="0" max="100" />
+        </form>
+        <script>
+            let darkTheme = false;
+
+            document.getElementById("toggleTheme").addEventListener("click", function () {
+                darkTheme = !darkTheme;
+                const inputs = document.querySelectorAll('input[type="radio"], input[type="checkbox"], input[type="range"]');
+                const newColor = darkTheme ? "#007BFF" : "#ff6600"; // 切換顏色
+                inputs.forEach((input) => {
+                    input.style.accentColor = newColor;
+                });
+            });
+        </script>
+    </body>
+</html>

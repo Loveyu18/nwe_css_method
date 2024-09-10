@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>focus and has ex.</title>
+        <style>
+            .input-form {
+                padding: 50px;
+                background-color: #bd8585;
+                margin-bottom: 20px;
+            }
+            .input-box:focus-within {
+                background-color: #7fd87f;
+            }
+            .input-form:has(.input-box:focus-within) {
+                background-color: #cbdf1f;
+            }
+
+            .input-box {
+                background-color: #fff;
+                margin-bottom: 20px;
+                padding: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <form action="" class="input-form">
+            <div class="input-box">
+                <label for="" for="name">姓名：</label>
+                <input type="text" id="name" />
+            </div>
+
+            <div class="input-box">
+                <label for="" for="phone">電話：</label>
+                <input type="text" id="phone" />
+            </div>
+            <div class="input-box2">
+                <label for="" for="phone">電話：</label>
+                <input type="text" id="phone" />
+            </div>
+        </form>
+    </body>
+</html>
+
+<!-- 假設你有一個表單，其中某個輸入框獲得焦點後，不僅希望改變該輸入框所在容器的樣式，還希望連帶改變其他容器的樣式。這時候可以使用 :focus-within 和 :has() 的組合。 -->
+
+<!-- Q:    下面兩種寫法有甚麼差別  
+            .input-box:focus-within {
+                background-color: #7fd87f;
+            }
+            .input-form:focus-within {
+                background-color: #cbdf1f;
+            } 
+                AND
+
+
+            .input-box:focus-within {
+                background-color: #7fd87f;
+            }
+            .input-form:has(.input-box:focus-within) {
+                background-color: #cbdf1f;
+            }
+            
+-->
+
+<!-- 差異點分析
+1. 第一種寫法 (:has() + :focus-within)：
+.input-box:focus-within：當 input 獲得焦點時，所在的 .input-box 背景色變為綠色（#7fd87f）。
+.input-form:has(.input-box:focus-within)：當 .input-form 中有任意 .input-box 包含聚焦的 input，整個 .input-form 的背景色會變為黃綠色（#cbdf1f）。
+效果：只要有一個 .input-box 內的 input 獲得焦點，整個 .input-form 背景顏色變為黃綠色。這是因為 .input-form 包含一個子元素 .input-box，而 .input-box 內有 input 被聚焦。
+
+2. 第二種寫法 (:focus-within)：
+.input-box:focus-within：當 input 獲得焦點時，所在的 .input-box 背景色變為綠色（#7fd87f）。
+.input-form:focus-within：當 .input-form 內的任意子元素獲得焦點時，整個 .input-form 背景色變為黃綠色（#cbdf1f）。
+效果：當 .input-form 內任意元素獲得焦點（包括 .input-box 或其他子元素），整個 .input-form 的背景顏色都會變為黃綠色。
+
+兩者的主要區別：
+使用方式與靈活性：
+
+第一種方式利用了 :has() 選擇器來檢查 .input-form 中是否有 .input-box 包含聚焦的 input 元素，這樣可以更靈活地處理更複雜的結構。
+第二種方式更簡單直接，只要 .input-form 內有任意元素獲得焦點，就會改變其樣式。
+兼容性：
+
+:has() 是一個較新的 CSS 選擇器，可能還沒有得到所有瀏覽器的全面支持。因此，在一些舊的瀏覽器中，第一種方式可能無法正常工作。
+:focus-within 已經得到了大部分現代瀏覽器的支持，因此第二種方式的兼容性會更好。
+應用範圍：
+
+如果你希望樣式改變僅在特定條件下觸發，第一種方法會更具條件性和精確性。
+如果你希望任何焦點變化都影響父容器樣式，第二種方法更為直接。
+選擇建議：
+如果你只需要簡單地改變 .input-form 的背景顏色，當其中的 input 獲得焦點時，第二種寫法（只用 :focus-within）就足夠了。
+如果你需要更複雜的條件來觸發樣式變化，並且需要根據 .input-box 的狀態來控制 .input-form 的樣式變化，那麼第一種方法（結合 :has() 和 :focus-within）會更合適。 -->

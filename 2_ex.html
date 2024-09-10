@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <style>
+        #app {
+            width: 100%;
+            height: 100%;
+        }
+        .layout {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 5px;
+            background-color: #ada4a4;
+        }
+        .card {
+            border: 1px solid red;
+            padding: 0 20px;
+            grid-row: span 3;
+            display: grid;
+            grid-template-rows: subgrid;
+        }
+    </style>
+    <body>
+        <div id="app">
+            <div class="layout">
+                <div class="card">
+                    <header>Header</header>
+                    <div class="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ut sagittis massa. Nulla facilisi. Maecenas at consequat augue. In pharetra ut ipsum sit amet interdum. Pellentesque</div>
+                    <footer>Footer</footer>
+                </div>
+                <div class="card">
+                    <header>Header</header>
+                    <div class="content">
+                        Maecenas euismod sem nisl, vitae imperdiet arcu commodo in. Integer ac libero aliquet, condimentum nisl non, dapibus ex. Fusce scelerisque diam dapibus dictum eleifend. Nullam malesuada odio sed lectus efficitur sollicitudin.
+                        Maecenas non consequat dolor. Sed enim nibh, cursus sit amet mi et, tincidunt sollicitudin dolor. Nulla purus dui, malesuada a diam vitae, mattis laoreet purus. Vestibulum imperdiet, ante vel luctus rhoncus, metus purus congue
+                        enim, ut fermentum risus leo ut tortor. Maecenas euismod sem nisl, vitae imperdiet arcu commodo in. Integer ac libero aliquet, condimentum nisl non, dapibus ex. Fusce scelerisque diam dapibus dictum eleifend. Nullam malesuada
+                        odio sed lectus efficitur sollicitudin. Maecenas non consequat dolor. Sed enim nibh, cursus sit amet mi et, tincidunt sollicitudin dolor. Nulla purus dui, malesuada a diam vitae, mattis laoreet purus. Vestibulum imperdiet,
+                        ante vel luctus rhoncus, metus purus congue enim, ut fermentum risus leo ut tortor.
+                    </div>
+                    <footer>Footer</footer>
+                </div>
+                <div class="card">
+                    <header>Header</header>
+                    <div class="content">
+                        placerat.Aenean facilisis, enim sit amet euismod pretium, lectus lacus hendrerit nulla, at interdum mi quam quis massa. Cras varius commodo tellus, ac dignissim mauris egestas nec. Sed tempus pretium cursus. Vestibulum
+                        suscipit quam suscipit felis congue semper. Cras efficitur, augue sed scelerisque rhoncus, libero dui viverra sem, ut laoreet metus ex id odio. Vivamus laoreet venenatis nisi vitae aliquet. Nunc sit amet arcu nec ex tincidunt
+                    </div>
+                    <footer>Footer</footer>
+                </div>
+                <div class="card">
+                    <header>Header</header>
+                    <div class="content">
+                        commodo sit amet quis magna. Vivamus ex augue, scelerisque ut felis nec, eleifend viverra sem. Pellentesque ac sapien dolor. Maecenas feugiat finibus diam, scelerisque luctus leo iaculis id. Suspendisse porttitor arcu ac felis
+                        convallis pharetra. Curabitur vel dui a nisi semper lobortis eu at dolor.
+                    </div>
+                    <footer>Footer</footer>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+
+<!-- 不適合用在會換行的卡片 -->
+<!--  
+
+ #app {
+    width: 100%;
+    height: 100%;
+}
+.layout {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 5px;
+    background-color: #ada4a4;
+}
+.card {
+    border: 1px solid red;
+    padding: 0 20px;
+    grid-row: span 3;
+    display: grid;
+    grid-template-rows: subgrid;
+} 
+-->

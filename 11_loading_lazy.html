@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Lazy Loading 範例</title>
+        <style>
+            .container {
+                height: 1800px;
+                padding: 20px;
+                font-size: 24px;
+                text-align: center;
+            }
+            img {
+                max-width: 100%;
+                height: auto;
+                margin-bottom: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <p>這是頁面頂部的內容。請向下滾動來查看延遲加載的圖片與 iframe。</p>
+        </div>
+
+        <!-- 圖片的延遲加載 -->
+        <img src="./images/IMG_9987.JPEG" alt="懶加載圖片" loading="lazy" />
+        <img src="./images/IMG_9987.JPEG" alt="懶加載圖片" loading="lazy" />
+        <img src="./images/IMG_9987.JPEG" alt="懶加載圖片" loading="lazy" />
+     
+
+        <div class="container">
+            <p>這是頁面中部的內容。</p>
+            <img src="./images/警政署.png" alt="懶加載圖片" loading="lazy" />
+            <img src="./images/警政署.png" alt="懶加載圖片" loading="lazy" />
+            <img src="./images/警政署.png" alt="懶加載圖片" loading="lazy" />
+            <img src="./images/警政署.png" alt="懶加載圖片" loading="lazy" />
+            <img src="./images/警政署.png" alt="懶加載圖片" loading="lazy" />
+            <img src="./images/警政署.png" alt="懶加載圖片" loading="lazy" />
+            <img src="./images/警政署.png" alt="懶加載圖片" loading="lazy" />
+            <img src="./images/警政署.png" alt="懶加載圖片" loading="lazy" />
+            <img src="./images/警政署.png" alt="懶加載圖片" loading="lazy" />
+            <img src="./images/警政署.png" alt="懶加載圖片" loading="lazy" />
+            <img src="./images/警政署.png" alt="懶加載圖片" loading="lazy" />
+        </div>
+
+        <!-- iframe 的延遲加載 -->
+        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" width="560" height="315" frameborder="0" loading="lazy" allowfullscreen></iframe>
+
+        <div class="container">
+            <p>這是頁面底部的內容。</p>
+        </div>
+    </body>
+</html>
+<!-- 
+主題介紹：Lazy Loading 是一種延遲加載技術，能夠提高網站的加載性能，減少不必要的資源消耗。這個概念可應用於圖片、視頻和 iframe 等資源。
+內容重點：
+使用 <img loading="lazy"> 屬性實現圖片懶加載。
+JavaScript Intersection Observer API 實現自訂的懶加載。
+實例：展示懶加載對頁面性能的提升效果。
+練習：設計一個頁面，包含大量圖片，並實現懶加載功能，對比加載前後的性能差異。 
+-->
+

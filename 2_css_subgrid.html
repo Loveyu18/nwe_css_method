@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>css subgrid</title>
+    </head>
+    <style>
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(9, 1fr);
+            grid-template-rows: repeat(6, minmax(100px, auto));
+            background-color: #cea7a7;
+        }
+
+        .item {
+            display: grid;
+            grid-column: 2 / 9;
+            grid-row: 2 / 6;
+            /* grid-template-columns: repeat(7, 1fr); */
+            grid-template-columns: subgrid;
+            grid-template-rows: subgrid;
+            background-color: #8b1f1f;
+        }
+        .subitem {
+            grid-column: 2 / 4;
+            grid-row: 2 / 4;
+            background-color: #27cce2;
+
+        }
+        .subitem1 {
+            grid-column: 5 / 7;
+            grid-row: 2 / 4;
+            background-color: #27cce2;
+        }
+    </style>
+    <body>
+        <div class="grid">
+            grid
+            <div class="item">
+                item
+                <div class="subitem">subitem</div>
+                <div class="subitem1">subitem1</div>
+            </div>
+        </div>
+    </body>
+</html>
+
+<!-- 允許子元素的網格項目（grid items）共享祖先網格（祖先元素的 grid）的列（column）或行（row），從而使嵌套網格能夠保持與祖先網格一致的對齊和比例。 -->

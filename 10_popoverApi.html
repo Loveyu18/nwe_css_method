@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>10_popoverApi</title>
+        <style>
+            .mypopover {
+                width: 300px;
+                height: 200px;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- <button popovertarget="mypopover">切換彈跳視窗</button>
+        <div class="mypopover" id="mypopover" popover>視窗內容</div> -->
+
+        <!-- <button popovertarget="mypopover" popovertargetaction="show">Show popover</button>
+        <button popovertarget="mypopover" popovertargetaction="hide">Hide popover</button>
+        <div id="mypopover" popover>Popover content</div> -->
+
+        <button id="myButton" popover-target="#popoverExample">點擊我</button>
+        <div id="popoverExample" popover>這是一個 Popover 內容</div>
+
+        <script>
+            const button = document.getElementById("myButton");
+            const popover = document.getElementById("popoverExample");
+
+            button.addEventListener("click", () => {
+                popover.togglePopover();
+            });
+        </script>
+    </body>
+</html>
+
+<!-- CSS 中的 Popover API 是一個相對較新的功能，它允許你以更簡便的方式在網頁中顯示浮動的彈出式元素（如工具提示或彈出對話框）。這個 API 提供了一個語意化的方式來創建彈出元素，而不需要依賴過多的 JavaScript。 -->
+
+<!-- popover 分兩種，modal 與 non-modal，差別是前者不允許跟 modal 以外的物件互動，後者可以。 -->
+
+<!-- HTMLElement.showPopover 顯示 popover.
+HTMLElement.hidePopover 隱藏 popover.
+HTMLElement.togglePopover 開關 popover. -->
+
+<!-- !!! 手機板 safari 17 以上才有支援 -->
+
+<!-- 
+主題介紹：Popover API 是一個新興的 Web API，用來輕鬆地實現彈出提示框（popover），類似於 tooltip，但擁有更多控制權限。
+內容重點：
+介紹 Popover API 的基本概念及如何與 HTML 元素結合使用。
+使用 showPopover() 和 hidePopover() 方法控制彈出和隱藏。
+探討 Popover 與其他 UI 元件（如 modal 或 tooltip）的差異。
+練習：設計一個按鈕，點擊後彈出 popover，並在點擊外部區域時自動關閉。
+進階：如何搭配自訂樣式和動畫來美化 popover 顯示效果。
+-->

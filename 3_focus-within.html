@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>focus-within</title>
+        <style>
+            .input-wrap{
+                padding: 20px;
+                background-color: #6147bd;
+            }
+            .input-wrap:focus-within {
+             
+                background-color: #9179e7;
+            }
+            .sub-wrap{
+                padding: 20px;
+                background-color: #423131;
+            }
+            .sub-wrap:focus-within{
+                background-color: #7e6b6b;
+            }
+
+            .name-input {
+                background-color: #ad6e6e;
+            }
+    
+            .name-input:focus{
+                background-color: #25d64c
+            }
+        </style>
+    </head>
+    <body>
+        <div class="input-wrap">
+            <div class="sub-wrap">
+            <label class="name-label" for="name">姓名:</label>
+            <input class="name-input" type="text" id="name" />
+        </div>
+    </body>
+</html>
+
+<!-- 子層有元素被聚焦，父層就會改變樣式，元素內部的任何子元素獲得了焦點，:focus-within 就會被觸發 -->
+<!-- 使用在自己身上也會改變樣式，在沒有子層的情況，若要改變當前元素，可直接使用，若有子層，則還是要使用 :focus -->

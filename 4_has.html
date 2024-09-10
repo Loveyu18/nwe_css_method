@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Menu with :has()</title>
+    <style>
+        .main-menu {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            background-color: #333;
+            display: flex;
+        }
+
+        .main-menu > li {
+            position: relative;
+            padding: 15px 20px;
+            color: white;
+        }
+
+        .main-menu > li:hover {
+            background-color: #444;
+        }
+
+        .main-menu > li > a {
+            color: white;
+            text-decoration: none;
+        }
+
+        /* 子選單 */
+        .sub-menu {
+            list-style: none;
+            padding: 10px 0;
+            margin: 0;
+            background-color: #555;
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+        }
+
+        .sub-menu li {
+            padding: 10px;
+            color: white;
+        }
+
+        .sub-menu li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        /* 當主選單項目被選中時，顯示子選單 */
+        .main-menu > li:hover .sub-menu {
+            display: block;
+        }
+
+        /* 使用 :has() 當子選單項目被選中時，改變主選單項目背景色 */
+        .main-menu > li:has(.sub-menu li.selected) {
+            background-color: #0066cc;
+        }
+
+        /* 選中的子選單項目樣式 */
+        .sub-menu li.selected {
+            background-color: #ffcc00;
+        }
+    </style>
+</head>
+<body>
+    <ul class="main-menu">
+        <li>
+            <a href="#">主選單1</a>
+            <ul class="sub-menu">
+                <li><a href="#">子選單1-1</a></li>
+                <li ><a href="#">子選單1-2 (選中)</a></li>
+                <li class="selected"><a href="#">子選單1-3</a></li>
+            </ul>
+        </li>
+        <li class="main-li-2"><a href="#">主選單2</a></li>
+        <li class="selected"><a href="#">主選單3</a></li>
+    </ul>
+</body>
+</html>
+
+<!-- Q: 當子選單被選中時，主選單如何一起變色 -->
