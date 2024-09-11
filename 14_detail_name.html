@@ -1,14 +1,83 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>14. detail name</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ Example</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    /* 自訂 <summary> 標籤的樣式 */
+    details {
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 10px;
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: bold;
+      list-style: none;
+      outline: none;
+      position: relative;
+    }
+
+    /* 自訂箭頭符號樣式 */
+    summary::before {
+      content: '⯈'; /* 展開前的箭頭 */
+      font-size: 1.2em;
+      margin-right: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    details[open] summary::before {
+      content: '⯆'; /* 展開後的箭頭 */
+    }
+
+    /* FAQ 展開的內容樣式 */
+    details p {
+      margin: 10px 0;
+      line-height: 1.5;
+      color: #333;
+      opacity: 0;
+      max-height: 0;
+      overflow: hidden;
+      transition: opacity 1s ease, max-height 1s ease;
+    }
+
+    details[open] p {
+      opacity: 1;
+      max-height: 500px; /* 足夠高以顯示全部內容 */
+    }
+
+  </style>
 </head>
 <body>
-    
+
+  <h1>FAQ 區域</h1>
+
+  <details>
+    <summary>問題 1: 這是什麼？</summary>
+    <p>這是一個 FAQ 區域範例，使用了 <code>&lt;details&gt;</code> 和 <code>&lt;summary&gt;</code> 標籤來創建可折疊的問題和答案。</p>
+  </details>
+
+  <details>
+    <summary>問題 2: 如何使用這個範例？</summary>
+    <p>只需要點擊每個問題，答案就會展開。這個範例還展示了如何使用 CSS 來改變箭頭圖標和加入動畫效果。</p>
+  </details>
+
+  <details>
+    <summary>問題 3: 我可以自訂樣式嗎？</summary>
+    <p>當然可以！你可以透過 CSS 自訂 <code>&lt;summary&gt;</code> 和 <code>&lt;details&gt;</code> 的樣式，例如更改顏色、邊框或添加動畫效果。</p>
+  </details>
+
 </body>
 </html>
+
 
 <!-- 
 
@@ -17,4 +86,9 @@
 介紹如何使用 <details> 元素創建折疊/展開區域。
 利用 CSS 和 JavaScript 改善展示效果，如自訂箭頭符號、動畫效果等。
 練習：設計一個 FAQ 區域，使用 <details> 和 <summary> 標籤創建可折疊問題列表，並加入自訂樣式。
+
+    <details> 和 <summary>：<details> 是一個可以折疊和展開的區域，而 <summary> 是折疊區域的標題，點擊它時內容會展開。
+箭頭符號：使用了 summary::before 來自訂箭頭符號，根據 <details> 是否被展開，箭頭會從 ⯈（向右）變成 ⯆（向下）。
+動畫效果：通過使用 max-height 和 opacity 來實現展開和折疊時的平滑動畫過渡。
+details[open]：當 <details> 被展開時會自動加上 open 屬性，這可以用來觸發不同的樣式（如箭頭變化和內容顯示）。
     -->

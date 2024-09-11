@@ -1,12 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>12. Select 分隔線</title>
-    </head>
-    <body></body>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Native Select with Divider</title>
+  <style>
+    /* 調整 select 元素的基本樣式 */
+    select {
+      width: 200px;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      appearance: none;
+      background-color: #f0f0f0;
+    }
+
+    /* 自訂 optgroup 樣式 */
+    optgroup {
+      color: #555;
+      font-weight: bold;
+      font-size: 14px;
+      border-top: 1px solid #ddd; /* 分隔線效果 */
+      margin-top: 5px;
+      padding-top: 5px;
+    }
+
+    option {
+      padding: 10px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <label for="customSelect">選擇項目:</label>
+  <select id="customSelect">
+    <optgroup label="分組 1">
+      <option value="option1">選項 1</option>
+      <option value="option2">選項 2</option>
+    </optgroup>
+    <optgroup label="分組 2">
+      <option value="option3">選項 3</option>
+      <option value="option4">選項 4</option>
+    </optgroup>
+    <optgroup label="分組 3">
+      <option value="option5">選項 5</option>
+    </optgroup>
+  </select>
+
+</body>
 </html>
+
+
 
 <!-- 
 主題介紹：select 元素的自訂化設計，尤其是為選項間添加分隔線，通常需要 CSS 和 JavaScript 配合。

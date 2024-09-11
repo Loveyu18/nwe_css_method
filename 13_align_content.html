@@ -1,19 +1,143 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>13. align content</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Align Items vs Align Content</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .flex-container {
+      display: flex;
+      flex-wrap: wrap;
+      height: 400px;
+      width: 90%;
+      border: 2px solid #333;
+      background-color: #f5f5f5;
+    }
+
+    .flex-item {
+      height: 50px;
+      width: 300px;
+      margin: 10px;
+      background-color: #4CAF50;
+      color: white;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* 不同的 align-content 和 align-items 設定 */
+    .align-items-start {
+      align-items: flex-start;
+    }
+
+    .align-items-end {
+      align-items: flex-end;
+    }
+
+    .align-content-start {
+      align-content: flex-start;
+    }
+
+    .align-content-end {
+      align-content: flex-end;
+    }
+
+    .align-content-center {
+      align-content: center;
+    }
+
+    .align-content-space-between {
+      align-content: space-between;
+    }
+    
+  </style>
 </head>
 <body>
-    
+
+  <h2>align-items: flex-start (每行項目對齊到起點)</h2>
+  <div class="flex-container align-items-start">
+    <div class="flex-item">項目 1</div>
+    <div class="flex-item">項目 2</div>
+    <div class="flex-item">項目 3</div>
+    <div class="flex-item">項目 4</div>
+    <div class="flex-item">項目 5</div>
+    <div class="flex-item">項目 6</div>
+    <div class="flex-item">項目 5</div>
+    <div class="flex-item">項目 6</div>
+    <div class="flex-item">項目 5</div>
+    <div class="flex-item">項目 6</div>
+  </div>
+
+  <h2>align-items: flex-end (每行項目對齊到終點)</h2>
+  <div class="flex-container align-items-end">
+    <div class="flex-item">項目 1</div>
+    <div class="flex-item">項目 2</div>
+    <div class="flex-item">項目 3</div>
+    <div class="flex-item">項目 4</div>
+    <div class="flex-item">項目 5</div>
+    <div class="flex-item">項目 6</div>
+  </div>
+
+  <h2>align-content: flex-start (多行項目整體對齊到起點)</h2>
+  <div class="flex-container align-content-start">
+    <div class="flex-item">項目 1</div>
+    <div class="flex-item">項目 2</div>
+    <div class="flex-item">項目 3</div>
+    <div class="flex-item">項目 4</div>
+    <div class="flex-item">項目 5</div>
+    <div class="flex-item">項目 6</div>
+  </div>
+
+  <h2>align-content: flex-end (多行項目整體對齊到終點)</h2>
+  <div class="flex-container align-content-end">
+    <div class="flex-item">項目 1</div>
+    <div class="flex-item">項目 2</div>
+    <div class="flex-item">項目 3</div>
+    <div class="flex-item">項目 4</div>
+    <div class="flex-item">項目 5</div>
+    <div class="flex-item">項目 6</div>
+  </div>
+
+  <h2>align-content: center (多行項目整體對齊到中間)</h2>
+  <div class="flex-container align-content-center">
+    <div class="flex-item">項目 1</div>
+    <div class="flex-item">項目 2</div>
+    <div class="flex-item">項目 3</div>
+    <div class="flex-item">項目 4</div>
+    <div class="flex-item">項目 5</div>
+    <div class="flex-item">項目 6</div>
+  </div>
+
+  <h2>align-content: space-between (多行項目之間均勻分佈)</h2>
+  <div class="flex-container align-content-space-between">
+    <div class="flex-item">項目 1</div>
+    <div class="flex-item">項目 2</div>
+    <div class="flex-item">項目 3</div>
+    <div class="flex-item">項目 4</div>
+    <div class="flex-item">項目 5</div>
+    <div class="flex-item">項目 6</div>
+  </div>
+
 </body>
 </html>
+
+
 
 <!-- 
 主題介紹：align-content 是 CSS Flexbox 的屬性，用來控制多行 flex 項目在容器內的對齊方式。
 內容重點：
 不同於 align-items，align-content 僅在多行排列時生效，常見屬性值如 stretch, center, space-between, space-around。
 展示 Flexbox 佈局中 align-content 如何影響項目在不同尺寸容器中的排列。
+align-items：當交錯軸只有一行時的對齊方式
+align-content：交錯軸為多行時的的整體對齊方式
 練習：設計一個多行 Flexbox 容器，實驗各種 align-content 屬性值，並解釋每個值的作用。
 -->
